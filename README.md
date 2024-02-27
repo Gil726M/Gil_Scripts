@@ -17,6 +17,7 @@ Rookie
 6.
 7.
 8.
+9.
 
 Easy
 1.
@@ -24,7 +25,6 @@ Easy
 3.
 4.
 5.
-6.
 
 Moderate
 1.
