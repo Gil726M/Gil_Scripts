@@ -6,4 +6,51 @@ Repository Structure
 
 The scripts in this repository are organized into five levels of complexity, from basic tasks suitable for beginners to advanced challenges that require deeper understanding and expertise. 
 
+The files are ordered this way:
+
+Rookie
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+
+Easy
+1.
+2.
+3.
+4.
+5.
+6.
+
+Moderate
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+
+Hard
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+
+Veteran
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+
 
