@@ -11,7 +11,7 @@ The files are ordered this way:
 Rookie
 1. check_num.sh.rtf
 2. addition_two.sh.rtf
-3.
+3. print_larger.sh.rtf
 4.
 5.
 6.
