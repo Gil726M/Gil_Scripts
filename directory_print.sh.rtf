@@ -1,0 +1,58 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2759
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 ArialMT;\f2\froman\fcharset0 Times-Roman;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 #
+\f1\fs29\fsmilli14667 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Write a bash script that loops through items in a directory(if user sent path, do it in there, if
+\f2\fs24 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs29\fsmilli14667 \cf0 not, in current directory) and results in this:
+\f2\fs24 \
+
+\f1\fs29\fsmilli14667 Item 1 : positional-parameters.sh
+\f2\fs24 \
+
+\f1\fs29\fsmilli14667 Item 2 : backup.sh
+\f2\fs24 \
+
+\f1\fs29\fsmilli14667 Item 3 : emp-report.awk
+\f2\fs24 \
+
+\f1\fs29\fsmilli14667 Item 4 : item-list.sed
+\f2\fs24 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 \strokec2 #!/bin/bash\
+\
+# Ask the user if they want to use the current directory\
+echo "Do you want to use the current directory? (y/n)"\
+read use_current_dir\
+\
+if [[ "$use_current_dir" == "n" ]]; then\
+# Ask the user for a directory path\
+echo "Please enter a directory path:"\
+read dir_path\
+else\
+# Use the current directory\
+dir_path=$(pwd)\
+fi\
+\
+# Ensure the directory exists\
+if [ ! -d "$dir_path" ]; then\
+echo "Directory $dir_path does not exist."\
+exit 1\
+fi\
+\
+# Loop through items in the directory\
+item_count=1\
+for item in "$dir_path"/*; do\
+echo "Item $item_count : $(basename "$item")"\
+((item_count++))\
+done}

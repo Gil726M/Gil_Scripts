@@ -1,0 +1,62 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2759
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs26\fsmilli13333 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 #
+\fs29\fsmilli14667 \strokec2 Write a bash script that reads a DIRECTORY name, if it exists, copies all its files to a new backup dir(name: original-name.DATE.backup), with files ending .backup, and files
+\f1\fs24 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs29\fsmilli14667 \cf0 names with current date. If backup dir is already exist, ask user if he want to replace,
+\f1\fs24 \
+
+\f0\fs29\fsmilli14667 and also let the user know if the directory is older than 48 hours.
+\f1\fs24 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs26\fsmilli13333 \cf0 \strokec2 \
+\
+#!/bin/bash\
+\
+# Read the directory name\
+echo "Enter the directory name:"\
+read dir\
+\
+# Check if directory exists\
+if [ -d "$dir" ]; then\
+# Get the current date\
+current_date=$(date +%Y-%m-%d)\
+\
+# Create the backup directory name\
+backup_dir="$\{dir\}.$\{current_date\}.backup"\
+\
+# Check if backup directory already exists\
+if [ -d "$backup_dir" ]; then\
+echo "Backup directory already exists. Do you want to replace it? (y/n)"\
+read answer\
+if [ "$answer" != "y" ]; then\
+echo "Exiting script."\
+exit 1\
+fi\
+fi\
+\
+# Create the backup directory\
+mkdir -p "$backup_dir"\
+\
+# Copy all files and subdirectories from the original directory to the backup directory\
+find "$dir" -type f -exec cp --backup=numbered --suffix=.backup -t "$backup_dir" \{\} +\
+\
+# Check if the directory is older than 48 hours\
+if [ "$(find "$dir" -mmin +2880)" ]; then\
+echo "The directory is older than 48 hours."\
+else\
+echo "The directory is not older than 48 hours."\
+fi\
+else\
+echo "Directory does not exist."\
+fi}

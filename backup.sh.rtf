@@ -1,0 +1,48 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2759
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Arial-BoldMT;\f2\fswiss\fcharset0 ArialMT;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 #
+\f1\b\fs40 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \'a0
+\f2\b0\fs32 Write a bash script that reads a file name and check if it exists. If it does, create a new file with the same name, but add date and .back to the new name. Before creating the new backup file, check if it is already exists and if it does, ask the user if he wants to replace it.\
+\
+\pard\pardeftab720\partightenfactor0
+
+\fs26\fsmilli13333 \cf0 \strokec2 #!/bin/bash\
+\
+# Read the file name\
+echo "Enter the file name:"\
+read file\
+\
+# Check if the file exists\
+if [ -f "$file" ]; then\
+# Get the date\
+date=$(date +%Y%m%d)\
+\
+# Create the backup file name\
+backup_file="$\{file\}_$\{date\}.back"\
+\
+# Check if the backup file already exists\
+if [ -f "$backup_file" ]; then\
+# Ask the user if they want to replace it\
+echo "Backup file $backup_file already exists. Do you want to replace it? (y/n)"\
+read answer\
+\
+if [ "$answer" != "$\{answer#[Yy]\}" ]; then\
+cp "$file" "$backup_file"\
+echo "Backup $backup_file created."\
+else\
+echo "No backup created."\
+fi\
+else\
+cp "$file" "$backup_file"\
+echo "Backup $backup_file created."\
+fi\
+else\
+echo "File $file does not exist."\
+fi}
