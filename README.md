@@ -4,7 +4,7 @@ Welcome to my repository, where I showcase my scripting skills, developed and ho
 
 Repository Structure: The scripts in this repository are organized into five levels of complexity, from basic tasks suitable for beginners to advanced challenges that require deeper understanding and expertise. 
 
-File stracture: Each file have the a request and the script that follows it.
+File stracture: Each file have a request and the script that follows it.
 
 The files are ordered this way:
 
