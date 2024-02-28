@@ -9,9 +9,9 @@ File stracture: Each file have a request and the script that follows it.
 The files are ordered this way:
 
 Rookie
-1. check_num.sh.rtf
-2. addition_two.sh.rtf
-3. print_larger.sh.rtf
+1. check_num.sh
+2. addition_two.sh
+3. print_larger.sh
 4. arithmetic.sh
 5. user_find.sh
 6. display.sh
