@@ -30,16 +30,14 @@ Easy
 5. directory_backup.sh
 
 Moderate
-1.
-2.
-3.
-4.
-5.
-6.
-7.
+1. word.sh
+2. biggest.sh
+3. math_operations.sh
+4. find_line.sh
+5. strings.c
 
 Hard
-1.
+1. users.sh
 2.
 3.
 4.
