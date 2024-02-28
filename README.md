@@ -36,7 +36,7 @@ Moderate
 
 Hard
 1. users.sh
-2.
+2. clear_file.sh
 3.
 4.
 5.
