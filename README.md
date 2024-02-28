@@ -37,11 +37,7 @@ Moderate
 Hard
 1. users.sh
 2. clear_file.sh
-3.
-4.
-5.
-6.
-7.
+3. array.sh
 
 Veteran
 1.
