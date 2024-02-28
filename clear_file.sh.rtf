@@ -1,0 +1,36 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2759
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs26\fsmilli13333 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 #
+\fs32 \strokec2 Write a bash script that receives a text file name, find it ,verify it is text file type and remove all non-letters from it.(save the result in the same file)
+\fs26\fsmilli13333 \strokec2 \
+\
+#!/bin/bash\
+\
+# Ask the user for a file name\
+echo "Please enter a file name:"\
+read filename\
+\
+# Check if the file exists\
+if [ ! -f "$filename" ]; then\
+echo "File does not exist."\
+exit 1\
+fi\
+\
+# Check if the file is a text file\
+filetype=$(file -b --mime-type "$filename")\
+if [ "$filetype" != "text/plain" ]; then\
+echo "File is not a text file."\
+exit 1\
+fi\
+\
+# Remove all non-letter characters from the file\
+sed -i 's/[^a-zA-Z]//g' "$filename"\
+\
+echo "Operation completed successfully."}
